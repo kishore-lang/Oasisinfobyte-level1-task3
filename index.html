@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Temperature Converter</h1>
+      <p class="subtitle">Convert between Celsius, Fahrenheit and Kelvin</p>
+    </header>
+
+    <section class="converter" aria-labelledby="converter-heading">
+      <h2 id="converter-heading" class="sr-only">Converter</h2>
+
+      <form id="converter-form" autocomplete="off" novalidate>
+        <div class="row">
+          <label for="value">Value</label>
+          <input id="value" name="value" type="number" step="any" inputmode="decimal" placeholder="Enter numeric value" required>
+        </div>
+
+        <div class="row">
+          <label for="from">From</label>
+          <select id="from" name="from" required>
+            <option value="C">Celsius (°C)</option>
+            <option value="F">Fahrenheit (°F)</option>
+            <option value="K">Kelvin (K)</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label for="to">To</label>
+          <select id="to" name="to" required>
+            <option value="F">Fahrenheit (°F)</option>
+            <option value="C">Celsius (°C)</option>
+            <option value="K">Kelvin (K)</option>
+          </select>
+        </div>
+
+        <div class="actions">
+          <button id="convert" type="submit" class="btn">Convert</button>
+          <button id="swap" type="button" class="btn alt">Swap</button>
+          <button id="clear" type="button" class="btn ghost">Clear</button>
+        </div>
+      </form>
+
+      <div id="result" class="result" aria-live="polite" hidden>
+        <p><strong>Result:</strong></p>
+        <p id="result-output"></p>
+        <p id="equation" class="small muted"></p>
+      </div>
+
+      <div id="error" class="error" role="alert" hidden></div>
+    </section>
+
+    <footer class="footer">
+      <p>Task 3 — Temperature Converter • Built with HTML / CSS / JavaScript</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
